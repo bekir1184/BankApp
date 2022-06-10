@@ -1,5 +1,9 @@
 package com.example.bankapp.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Bank(
     val ID: Int,
     val dc_ADRES: String,
@@ -14,4 +18,4 @@ data class Bank(
     val dc_ON_OFF_SITE: String,
     val dc_POSTA_KODU: String,
     val dc_SEHIR: String
-)
+) : Parcelable

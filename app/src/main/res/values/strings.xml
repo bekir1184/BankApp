@@ -5,5 +5,8 @@
     <string name="zip_code">Posta Kodu</string>
     <string name="bank_type">Banka Türü</string>
     <string name="go_to_bank">Bankaya git</string>
+    <string name="city">Şehir</string>
+    <string name="town">İlçe</string>
+    <string name="about">Hakkında</string>
 
 </resources>

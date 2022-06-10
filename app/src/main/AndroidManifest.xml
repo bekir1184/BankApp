@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BankApp"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC7j4BWY7Gjh-dm_RnbkW74qmIp9I5vg6I" />
+
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true">

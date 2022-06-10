@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bankapp.R
 import com.example.bankapp.databinding.FragmentBankListBinding
@@ -26,10 +27,22 @@ class BankListFragment() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentBankListBinding.inflate(layoutInflater,container,false)
+        setObserver()
+        setOnClicks()
+        return binding.root
+    }
 
+    private fun setOnClicks() {
+        bankAdapter.setOnItemCoinClickListener {
+            val action = BankListFragmentDirections.actionBankListFragmentToBankDetailFragment(it)
+            findNavController().navigate(action)
+        }
+    }
+
+    private fun setObserver() {
         bankListViewModel.state.observe(viewLifecycleOwner){
             if(it != null){
-                if(!it.banks.isEmpty()){
+                if(it.banks.isNotEmpty()){
                     wholeBanklist.addAll(it.banks)
                     bankAdapter.submitList(it.banks)
                     binding.searchBar.setText("")
@@ -44,7 +57,6 @@ class BankListFragment() : Fragment() {
                 }
             }
         }
-        return binding.root
     }
 
     private fun setRecyclerView() {

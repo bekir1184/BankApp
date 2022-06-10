@@ -9,5 +9,18 @@
         android:id="@+id/bankListFragment"
         android:name="com.example.bankapp.presentation.bank_list.BankListFragment"
         android:label="fragment_bank_list"
-        tools:layout="@layout/fragment_bank_list" />
+        tools:layout="@layout/fragment_bank_list" >
+        <action
+            android:id="@+id/action_bankListFragment_to_bankDetailFragment"
+            app:destination="@id/bankDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankDetailFragment"
+        android:name="com.example.bankapp.presentation.bank_detail.BankDetailFragment"
+        android:label="fragment_bank_detail"
+        tools:layout="@layout/fragment_bank_detail" >
+        <argument
+            android:name="Bank"
+            app:argType="com.example.bankapp.domain.model.Bank" />
+    </fragment>
 </navigation>
