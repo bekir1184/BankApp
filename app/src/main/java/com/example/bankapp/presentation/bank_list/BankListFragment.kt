@@ -47,13 +47,13 @@ class BankListFragment() : Fragment() {
                     bankAdapter.submitList(it.banks)
                     binding.searchBar.setText("")
                     setRecyclerView()
-                    binding.progressCircular.visibility = View.GONE
+                    binding.shimmerLayout.visibility = View.GONE
                 }
                 if (it.error.isNotBlank()){
                     println(it.error)
                 }
                 if (it.isLoading){
-                    binding.progressCircular.visibility = View.VISIBLE
+                    binding.shimmerLayout.visibility = View.VISIBLE
                 }
             }
         }

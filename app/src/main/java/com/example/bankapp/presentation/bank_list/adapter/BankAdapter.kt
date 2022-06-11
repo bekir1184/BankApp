@@ -49,6 +49,7 @@ class BankAdapter() : ListAdapter<Bank, CustomViewHolder>(customCallBack) {
             with(binding) {
                 bank = bankModel
             }
+
         }
     }
 

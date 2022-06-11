@@ -8,5 +8,9 @@
     <string name="city">Şehir</string>
     <string name="town">İlçe</string>
     <string name="about">Hakkında</string>
+    <string name="bank_code">Banka Kodu</string>
+    <string name="regional_coordinatory">Bölge Kordinatorlüğü</string>
+    <string name="nearest_ATM">En yakın ATM</string>
+    <string name="get_directions_to_atm">ATM ye yol tarifi al</string>
 
 </resources>

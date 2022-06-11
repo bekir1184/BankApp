@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/bg_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -54,6 +54,7 @@
                 tools:text="Banka Adı" />
 
             <Button
+                android:id="@+id/goToBank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
@@ -152,10 +153,12 @@
                 android:layout_margin="12dp"
                 >
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:paddingBottom="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
@@ -167,6 +170,89 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="@string/bank_code"
+                        app:layout_constraintStart_toStartOf="@+id/textView6"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                    <TextView
+                        android:id="@+id/bankCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@+id/textView7"
+                        app:layout_constraintTop_toTopOf="@+id/textView7"
+                        tools:text="1233124" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="@string/bank_type"
+                        app:layout_constraintStart_toStartOf="@+id/textView7"
+                        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                    <TextView
+                        android:id="@+id/bankType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@+id/textView8"
+                        app:layout_constraintTop_toTopOf="@+id/textView8"
+                        tools:text="Normal" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="@string/zip_code"
+                        app:layout_constraintStart_toStartOf="@+id/textView8"
+                        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                    <TextView
+                        android:id="@+id/zipCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@+id/textView9"
+                        app:layout_constraintTop_toTopOf="@+id/textView9"
+                        tools:text="19023" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="@string/regional_coordinatory"
+                        app:layout_constraintStart_toStartOf="@+id/textView9"
+                        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                    <TextView
+                        android:id="@+id/regionalCoordinatory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@+id/textView10"
+                        app:layout_constraintTop_toTopOf="@+id/textView10"
+                        tools:text="ADANA BÖLGE" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -180,12 +266,90 @@
                 android:layout_height="2dp"
                 app:layout_constraintTop_toBottomOf="@+id/aboutCard" />
 
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/view1">
+                <TextView
+                    android:id="@+id/onOfLine"
+                    android:layout_margin="4dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="On Line"
+                    android:background="@drawable/bg_button"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:textColor="@color/white"
+                    android:padding="12dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/onOfSite"
+                    android:layout_margin="4dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="On Site"
+                    android:background="@drawable/bg_button"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:textColor="@color/white"
+                    android:padding="12dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <View
+                android:id="@+id/view2"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <LinearLayout
+        android:id="@+id/goToNearestATM"
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_search"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:padding="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/primary_color"
+            android:gravity="center"
+            android:text="@string/nearest_ATM"/>
+        <TextView
+            android:gravity="center"
+            android:id="@+id/nearestATM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="ADANA / VİLAYET-ADANA-ATATÜRK BULVARI ŞUBESİ"
+            android:textColor="@color/black"
+            android:fontFamily="@font/quicksand_bold"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/get_directions_to_atm"
+            android:gravity="end"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="8dp"
+            android:textColor="@color/secondary_color"
+            android:fontFamily="@font/quicksand_bold"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/secondary_color"
+            android:drawableEnd="@drawable/ic_baseline_navigation_24"/>
+    </LinearLayout>
 
 
 
-</FrameLayout>
+
+</RelativeLayout>

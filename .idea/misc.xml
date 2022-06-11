@@ -7,9 +7,10 @@
         <entry key="..\:/Users/bekir/AndroidStudioProjects/BankApp/app/src/main/res/drawable/bg_search.xml" value="0.1565" />
         <entry key="..\:/Users/bekir/AndroidStudioProjects/BankApp/app/src/main/res/drawable/gray_gradient.xml" value="0.1565" />
         <entry key="..\:/Users/bekir/AndroidStudioProjects/BankApp/app/src/main/res/layout/activity_main.xml" value="0.1580547112462006" />
-        <entry key="..\:/Users/bekir/AndroidStudioProjects/BankApp/app/src/main/res/layout/fragment_bank_detail.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/bekir/AndroidStudioProjects/BankApp/app/src/main/res/layout/fragment_bank_detail.xml" value="0.22" />
         <entry key="..\:/Users/bekir/AndroidStudioProjects/BankApp/app/src/main/res/layout/fragment_bank_list.xml" value="0.325" />
         <entry key="..\:/Users/bekir/AndroidStudioProjects/BankApp/app/src/main/res/layout/fragment_maps.xml" value="0.1947463768115942" />
+        <entry key="..\:/Users/bekir/AndroidStudioProjects/BankApp/app/src/main/res/layout/main_page_shimmer.xml" value="0.1947463768115942" />
         <entry key="..\:/Users/bekir/AndroidStudioProjects/BankApp/app/src/main/res/layout/one_row_bank_item.xml" value="0.3333333333333333" />
       </map>
     </option>

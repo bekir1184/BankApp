@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.bankapp.R
+import com.example.bankapp.common.Constants.getLocation
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -26,7 +27,7 @@ class MapsFragment(val location: String) : Fragment() {
     private val callback = OnMapReadyCallback { googleMap ->
         //38.67817816086229, 39.20205574557179
 
-        val loc = getLatLng(location)
+        val loc = location.getLocation(requireActivity())
         googleMap.addMarker(MarkerOptions().position(loc).title(""))
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
         val cameraPosition = CameraPosition.Builder()
@@ -50,22 +51,5 @@ class MapsFragment(val location: String) : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
-    }
-
-    private fun getLatLng(s: String): LatLng {
-        val geocoder = Geocoder(activity)
-        var latLng = LatLng(0.0,0.0)
-        var list : List<Address>
-        try {
-            list = geocoder.getFromLocationName(s,1)
-            if(list!=null){
-                val lat = list[0].latitude
-                val lng = list[0].longitude
-                latLng = LatLng(lat,lng)
-            }
-        }catch (e : IOException){
-            println(e.message)
-        }
-        return latLng
     }
 }
