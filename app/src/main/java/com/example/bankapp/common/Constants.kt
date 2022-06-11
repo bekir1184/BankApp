@@ -13,7 +13,7 @@ object Constants {
     fun String.getLocation(activity: Activity):LatLng{
         val geocoder = Geocoder(activity)
         var latLng = LatLng(0.0,0.0)
-        var list : List<Address>
+        val list : List<Address>
         try {
             list = geocoder.getFromLocationName(this,1)
             if(list!=null){

@@ -25,7 +25,7 @@ class BankListViewModel @Inject constructor(
         getBanks()
     }
 
-    private fun getBanks(){
+    fun getBanks(){
         getBanksUseCase().onEach { result ->
             when(result){
                 is Resource.Success -> {

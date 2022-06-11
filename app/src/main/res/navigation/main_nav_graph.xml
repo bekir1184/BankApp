@@ -22,9 +22,5 @@
         <argument
             android:name="Bank"
             app:argType="com.example.bankapp.domain.model.Bank" />
-        <action
-            android:id="@+id/action_bankDetailFragment_to_bankListFragment"
-            app:destination="@id/bankListFragment"
-            app:popUpTo="@id/bankListFragment" />
     </fragment>
 </navigation>

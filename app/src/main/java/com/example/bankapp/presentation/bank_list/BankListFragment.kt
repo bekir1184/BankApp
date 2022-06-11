@@ -1,20 +1,26 @@
 package com.example.bankapp.presentation.bank_list
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.constraintlayout.motion.widget.OnSwipe
 import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bankapp.R
+import com.example.bankapp.check_network_connection.CheckNetworkConnection
+import com.example.bankapp.common.ErrorDialog
 import com.example.bankapp.databinding.FragmentBankListBinding
 import com.example.bankapp.domain.model.Bank
 import com.example.bankapp.presentation.bank_list.adapter.BankAdapter
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class BankListFragment() : Fragment() {
@@ -22,10 +28,12 @@ class BankListFragment() : Fragment() {
     private val bankListViewModel : BankListViewModel by viewModels()
     private var wholeBanklist  = mutableListOf<Bank>()
     private val bankAdapter = BankAdapter()
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentBankListBinding.inflate(layoutInflater,container,false)
         setObserver()
         setOnClicks()
@@ -50,7 +58,11 @@ class BankListFragment() : Fragment() {
                     binding.shimmerLayout.visibility = View.GONE
                 }
                 if (it.error.isNotBlank()){
-                    println(it.error)
+                    val error =  ErrorDialog(
+                        getString(R.string.an_error_occured),
+                        getString(R.string.an_error_occured),
+                        R.drawable.ic_baseline_error_24)
+                    error.show(requireActivity().supportFragmentManager,"ERROR-TAG")
                 }
                 if (it.isLoading){
                     binding.shimmerLayout.visibility = View.VISIBLE
@@ -70,7 +82,7 @@ class BankListFragment() : Fragment() {
         }
         binding.searchBar.doOnTextChanged { text, _, _, _ ->
             bankAdapter.submitList(wholeBanklist.filter {
-                it.dc_SEHIR!!.contains(
+                it.dc_SEHIR.contains(
                     (text ?: ""),
                     true
                 )

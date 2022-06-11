@@ -12,5 +12,12 @@
     <string name="regional_coordinatory">Bölge Kordinatorlüğü</string>
     <string name="nearest_ATM">En yakın ATM</string>
     <string name="get_directions_to_atm">ATM ye yol tarifi al</string>
+    <string name="image">resim</string>
+    <string name="an_error_occured">Bir Hata Oluştu</string>
+    <string name="okey">Tamam</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut erat laoreet, maximus ex ut, commodo est. Nullam eu malesuada nisl, et viverra lorem. Sed ac luctus dolor.</string>
+    <string name="wifi_error_text">İnternete bağlanırken bir hata oluştu. Lütfen internet bağlantınızı kontrol edip tekrar deneyiniz.</string>
+    <string name="wifi_error_title">İnternet bağlantınız yok</string>
+    <string name="bank_detail">Banka Detayı</string>
 
 </resources>
