@@ -78,7 +78,11 @@ class BankListFragment() : Fragment() {
             false
         )
         binding.bankRecyclerView.apply {
+            if(bankAdapter.itemCount==0){
+                Toast.makeText(requireContext(),"Liste Boş",Toast.LENGTH_SHORT).show()
+            }
             adapter = bankAdapter
+
         }
         binding.searchBar.doOnTextChanged { text, _, _, _ ->
             bankAdapter.submitList(wholeBanklist.filter {

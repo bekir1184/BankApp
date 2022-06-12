@@ -3,6 +3,7 @@ package com.example.bankapp.presentation.bank_list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -32,7 +33,8 @@ class BankAdapter() : ListAdapter<Bank, CustomViewHolder>(customCallBack) {
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-            holder.bind(getItem(position))
+        holder.bind(getItem(position))
+        holder.itemView.animation = AnimationUtils.loadAnimation(holder.itemView.context,R.anim.recycler_anim)
     }
     
     inner class CustomViewHolder(
