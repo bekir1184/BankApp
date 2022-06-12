@@ -26,6 +26,19 @@ It is an application where we can list the bank data we retrieved from API using
  
  * Model View View-Model
  
+ ## Implementation 
+### Enable Google Maps and Places APIs
+* Go to google maps api page from google cloud console from [here](https://console.cloud.google.com/google/maps-apis/apis/maps-android-backend.googleapis.com/metrics?). Enable it from the top of the page.
+* Go to google places api page from google cloud console from [here](https://console.cloud.google.com/google/maps-apis/apis/places-backend.googleapis.com/metrics?). Enable it from the top of the page.
+ ### Get the API Key from Console
+* Follow [this](https://developers.google.com/maps/documentation/android-sdk/get-api-key) link and get API key from Google Cloud Console.
+* In AndroidManifest.xml, add the following element as a child of the element, by inserting it just before the closing tag:
+```
+<meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="YOUR_API_KEY"/>
+```        
+ 
  ## LICENSE
  
  MIT License
